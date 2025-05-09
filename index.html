@@ -142,7 +142,7 @@
           });
           
           this.el.sceneEl.addEventListener('markerLost', () => {
-            document.getElementById('show1').style.display = "block";
+            document.getElementById('show1').style.display = "none";
               document.getElementById('show2').style.display = "none";
               document.getElementById('show3').style.display = "none";
           });
@@ -166,8 +166,8 @@
     </script>
   </head>
   <body style="margin: 0px; overflow: hidden;" onload="document.getElementById('xx').style.display='none'">
-    <div id="xx" class="xx-loader"><div>Loading V1.0, please wait...</div></div>
-    <div class="arjs-loader"><div>Loading V1.0, please wait...</div></div>
+    <div id="xx" class="xx-loader"><div>Loading V1.1, please wait...</div></div>
+    <div class="arjs-loader"><div>Loading V1.1, please wait...</div></div>
     <a-scene
       vr-mode-ui="enabled: false;"
       renderer="logarithmicDepthBuffer: true;"
@@ -186,7 +186,7 @@
     </a-scene>
 
     <div id="version">
-      <h2>V 1.0</h2>
+      <h2>V 1.1</h2>
     </div>
 
     <div id="show1" class="thisthis">
