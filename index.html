@@ -84,10 +84,14 @@
 
       .theblackone {
         background-color: #181818;
+        width: 100vw;
+        height: 60px;
       }
 
-      .version {
+      .version h2{
         color: white;
+        font-size: 20px;
+        font-weight: 1000;
       }
 
       h1 {
@@ -95,9 +99,8 @@
         text-transform: capitalize;
         margin-top: 10px;
         margin-bottom: 5px;
-        text-align:center
+        margin-left: 30px;
         font-weight: 1000;
-        font-style
         color: white;
       }
 
@@ -146,14 +149,10 @@
             var check = this.el.getAttribute("url");
             // alert(check);
             document.getElementById('show1').style.bottom = "0";
-            document.getElementById('show2').style.bottom = "-110vh";
-            document.getElementById('show3').style.bottom = "-110vh";
           });
           
           this.el.addEventListener('markerLost', () => {
             document.getElementById('show1').style.bottom = "-110vh";
-            document.getElementById('show2').style.bottom = "-110vh";
-            document.getElementById('show3').style.bottom = "-110vh";
           });
         }
       });
@@ -180,7 +179,9 @@
       
     </a-scene>
 
-    <div id="version">V 1.0</div>
+    <div id="version">
+      <h2>V 1.0</h2>
+    </div>
 
     <div id="show1" class="thisthis">
       <div id="theblackone">
