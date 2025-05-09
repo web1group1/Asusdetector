@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://aframe.io/releases/1.7.0/aframe.min.js"></script>
+    <script src="a.js"></script>
+    <script src="b.js"></script>
+    <title>Asus scanner</title>
+
+    <style>
+
+    </style>
+
+
+    <script>
+    AFRAME.registerComponent('asuslogodetecter', {
+        init: function () {
+          this.el.addEventListener('logofound', () => {
+            var check = this.el.getAttribute("url");
+            // alert(check);
+            document.getElementById('show').style.bottom = "0";
+          });
+          
+          this.el.addEventListener('logolost', () => {
+            document.getElementById('show').style.bottom = "-110vh";
+          });
+        }
+      });
+    </script>
+
+
+</head>
+<body>
+    <body style="margin: 0px; overflow: hidden;" onload="document.getElementById('xx').style.display='none'">
+        <div id="xx" class="xx-loader"><div>Loading, please wait...</div></div>
+        <div class="arjs-loader"><div>Loading, please wait...</div></div>
+        <a-scene
+          vr-mode-ui="enabled: false;"
+          renderer="logarithmicDepthBuffer: true;"
+          embedded
+          arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;">
+          <a-nft
+          markerhandler
+            type="nft"
+            url="aswara/one"
+            smooth="true"
+            smoothCount="100"
+            smoothTolerance=".1"
+            smoothThreshold="50">
+              <!-- <a-entity>
+                <a-image position="50 -200 -100" rotation="270 0 0" 
+                width="200" height="400" src="pop1.png"></a-image>
+              </a-entity> -->
+          </a-nft>
+
+        <img src="chargerone.png">
+        <h1>ROG 230W DC Adapter</h1>
+        <h3>Input</h3>
+        <p>100-240 V <br>50-60 Hz <br>3.5 A </p>
+        <h3>Output</h3>
+        <p>20.0 V <br>12.0 Hz <br>240.0 W </p>
+    </div>
+</body>
+</html>
