@@ -1,65 +1,179 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://aframe.io/releases/1.7.0/aframe.min.js"></script>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Historical</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;900&display=swap" rel="stylesheet">
     <script src="a.js"></script>
     <script src="b.js"></script>
-    <title>Asus scanner</title>
-
     <style>
+      * {
+        margin:  0;
+        padding: 0;
+        box-sizing: border-box;
+        font-size: 15px;
+        font-family: 'Montserrat', sans-serif;
+      }
+      .arjs-loader {
+        height: 100%;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.8);
+        z-index: 9999;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
 
+      .arjs-loader div {
+        text-align: center;
+        font-size: 1.25em;
+        color: white;
+        font-family: sans-serif;
+      }
+
+      .xx-loader {
+        height: 100%;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.8);
+        z-index: 9999;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .xx-loader div {
+        text-align: center;
+        font-size: 1.25em;
+        color: white;
+        font-family: sans-serif;
+      }
+
+     .thisthis {
+        position: fixed;
+        width: 100vw;
+        height: 80vh;
+        left: 0;
+        bottom: -110vh;
+        transition: bottom 0.7s;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center center;
+        display: block;
+        z-index: 99999;
+        padding: 20px;
+        padding-top: 26px;
+        overflow-y: scroll;
+        background-color: white;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        box-shadow: 0px -13px 21px -11px rgba(0, 0, 0, 0.5);
+-webkit-box-shadow: 0px -13px 21px -11px rgba(0, 0, 0, 0.5);
+      }
+
+      .thisthis img {
+        width: 100%;
+      }
+
+      h1 {
+        font-size: 2em;
+        text-transform: capitalize;
+        margin-top: 10px;
+        margin-bottom: 5px;
+        font-weight: 900;
+      }
+
+      h2 {
+        font-size: 1.5em;
+        text-transform: uppercase;
+        margin-top: 5px;
+        margin-bottom: 15px;
+        font-weight: 600;
+      }
+
+      p {
+        line-height: 1.4em;
+        font-weight: 400;
+      }
+
+      #xx {
+        display: block;
+      }
     </style>
-
-
     <script>
-    AFRAME.registerComponent('asuslogodetecter', {
+     /* 
+    AFRAME.registerComponent('markerhandler1', {
         init: function () {
-          this.el.addEventListener('logofound', () => {
+          this.el.sceneEl.addEventListener('markerFound', () => {
             var check = this.el.getAttribute("url");
-            // alert(check);
-            document.getElementById('show').style.bottom = "0";
+// alert(check);
+            if (check == 'aswara/one') {
+              document.getElementById('show1').style.display = "block";
+              document.getElementById('show2').style.display = "none";
+              document.getElementById('show3').style.display = "none";
+            }
           });
           
-          this.el.addEventListener('logolost', () => {
-            document.getElementById('show').style.bottom = "-110vh";
+          this.el.sceneEl.addEventListener('markerLost', () => {
+            document.getElementById('show1').style.display = "none";
+              document.getElementById('show2').style.display = "none";
+              document.getElementById('show3').style.display = "none";
           });
         }
       });
+*/
+      AFRAME.registerComponent('markerhandler', {
+        init: function () {
+          this.el.addEventListener('markerFound', () => {
+            var check = this.el.getAttribute("url");
+            // alert(check);
+            document.getElementById('show1').style.bottom = "0";
+            document.getElementById('show2').style.bottom = "-110vh";
+            document.getElementById('show3').style.bottom = "-110vh";
+          });
+          
+          this.el.addEventListener('markerLost', () => {
+            document.getElementById('show1').style.bottom = "-110vh";
+            document.getElementById('show2').style.bottom = "-110vh";
+            document.getElementById('show3').style.bottom = "-110vh";
+          });
+        }
+      });
+        
     </script>
+  </head>
+  <body style="margin: 0px; overflow: hidden;" onload="document.getElementById('xx').style.display='none'">
+    <div id="xx" class="xx-loader"><div>Loading, please wait...</div></div>
+    <div class="arjs-loader"><div>Loading, please wait...</div></div>
+    <a-scene
+      vr-mode-ui="enabled: false;"
+      renderer="logarithmicDepthBuffer: true;"
+      embedded
+      arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;">
+      <a-nft
+      markerhandler
+        type="nft"
+        url="asus"
+        smooth="true"
+        smoothCount="100"
+        smoothTolerance=".1"
+        smoothThreshold="50">
+      </a-nft>
+      
+    </a-scene>
 
-
-</head>
-<body>
-    <body style="margin: 0px; overflow: hidden;" onload="document.getElementById('xx').style.display='none'">
-        <div id="xx" class="xx-loader"><div>Loading, please wait...</div></div>
-        <div class="arjs-loader"><div>Loading, please wait...</div></div>
-        <a-scene
-          vr-mode-ui="enabled: false;"
-          renderer="logarithmicDepthBuffer: true;"
-          embedded
-          arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;">
-          <a-nft
-          markerhandler
-            type="nft"
-            url="aswara/one"
-            smooth="true"
-            smoothCount="100"
-            smoothTolerance=".1"
-            smoothThreshold="50">
-              <!-- <a-entity>
-                <a-image position="50 -200 -100" rotation="270 0 0" 
-                width="200" height="400" src="pop1.png"></a-image>
-              </a-entity> -->
-          </a-nft>
-
-        <img src="chargerone.png">
-        <h1>ROG 230W DC Adapter</h1>
-        <h3>Input</h3>
-        <p>100-240 V <br>50-60 Hz <br>3.5 A </p>
-        <h3>Output</h3>
-        <p>20.0 V <br>12.0 Hz <br>240.0 W </p>
+    <div id="show1" class="thisthis">
+      <img src="chargerone.png">
+      <h1>charger</h1>
+      <h2>charger</h2>
+      <p>blah blah</p>
     </div>
-</body>
+  </body>
 </html>
