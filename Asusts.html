@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>asus troubleshooting</title>
+</head>
+
+<style>
+    * {
+        margin:  0;
+        padding: 0;
+        box-sizing: border-box;
+        font-size: 15px;
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    .navbar {
+        width: 100%vw;
+        height: 70px;
+        background-color: black;
+    }
+
+    .navbar img {
+        height: 130%;
+        margin-left: 10px;
+        margin-top: -13px;
+    }
+
+    .navbar h1 { 
+        color: rgb(179, 179, 179); 
+        margin-top: 24px; 
+        margin-right: 30px;
+        float: right;
+        font-weight: 550;
+        font-size: 12px;
+    }
+
+    .maintitle {
+        width: 100vw;
+        height: 50px;
+        background-color: #181818;
+        padding: 15px;
+    }
+    
+    .maintitle h1 {
+        color: white;
+    }
+
+    .mainsection {
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .mainsection img {
+                padding: 30px;
+        width: 100%;
+    }
+
+    #info1 {
+        width: 100%;
+        height: auto;
+        background-color: #181818;
+        padding: 20px;
+    }
+
+    #info1 h1 {
+        font-size: 30px;
+        color: white;
+    }
+
+    #info1 h2 {
+        padding-top: 30px;
+        font-size: 20px;
+        color: rgb(255, 255, 255);
+    }
+
+    #info1 h3 {
+        padding-top: 10px;
+        font-size: 15px;
+        font-weight: 200;
+        color: rgb(179, 179, 179);
+    }
+
+    #innerinfodiv {
+        width: 100%;
+        height: 60px;
+        background-color: #000000;
+        padding: 20px;
+    }
+
+    .hover-btn {
+        background-color: black;
+        color: #fff;
+        border: none;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: color 0.3s ease;
+    }
+    .hover-btn:hover {
+        color: #ff2828;
+        box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+    }
+    .hover-btn:active {
+        color: rgb(255, 255, 255);
+        box-shadow: 0px 0px 5px rgba(0,0,0,0.1);
+    }
+
+     #info2 {
+        width: 100%;
+        height: auto;
+        background-color: #181818;
+        padding: 20px;
+    }
+
+    #info2 h2 {
+        font-size: 20px;
+        color: rgb(179, 179, 179);
+    }
+
+    #info2 h3 {
+        padding-top: 10px;
+        font-size: 15px;
+        font-weight: 200;
+        color: rgb(179, 179, 179);
+    }
+
+    #img {
+        background-color: black;
+    }
+
+</style>
+
+<body>
+    <div class="navbar">
+        <img src="roglogo.png">
+        <h1>TROUBLESHOOTING MODE</h1>
+    </div>
+    <div class="maintitle">
+        <h1>ROG 230W DC Adapter</h1>
+    </div>
+    <div class="mainsection">
+        <img src="chargerone.png">
+        <div id="info1">
+            <h1>Please identify your problem</h1>
+            <h2>Damaged cable</h2>
+        </div>
+        <div id="img">
+            <img src="IEC.png">
+        </div>
+        <div id="info1">
+
+            <h3>run your finger through the cable and if you feel a break in the cable then it has most likely snapped</h3>
+            <h3>if its the IEC C14 cable that snapped dont worry it is easily replacable</h3>
+        </div>
+        <div id="innerinfodiv">
+            <button class="hover-btn" onclick="window.location.href='https://shopee.co.id/Kabel-Power-Cord-C13-To-C14-1.5-1.8-3meter-i.4408181.20686734331';">Buy replacement IEC C14 cable</button>
+        </div>
+
+
+        <div id="info2">
+            <h3>If it is the undetatchable cable on the asus charger thats broken then you need to buy a replacement charger</h3>
+        </div>
+        <div id="innerinfodiv">
+            <button class="hover-btn" onclick="window.location.href='https://rog.asus.com/power-protection-gadgets/chargers-and-adapters/rog-240w-dc-adapter-model/';">Buy replacement charger</button>
+        </div>
+
+        <div id="info2">
+            <h2>Overheating</h2>
+        </div>
+        <div id="img">
+            <img src="overheating.jpg">
+        </div>
+        <div id="info1">
+
+            <h3>if the charger block is overheating there might be a few reasons why it could be happening</h3>
+            <h3>it could be because of the outlets being dirty, try cleaning them with a vaccuum</h3>
+            <h3>age could play a factor in it, if its old then you should get it replaced as it might be danagerous</h3>
+
+            <h3>if the charger is fully broken you can awlays buy a new one</h3>
+        </div>
+        <div id="innerinfodiv">
+            <button class="hover-btn" onclick="window.location.href='https://rog.asus.com/power-protection-gadgets/chargers-and-adapters/rog-240w-dc-adapter-model/';">Buy replacement charger</button>
+        </div>
+
+        <div id="info1">
+            <h3>factory defect, if it is new and still experiencing overheating it might be due to a flaw in the production process in which you should immediately contact asus support</h3>
+        </div>
+        <div id="innerinfodiv">
+            <button class="hover-btn" onclick="window.location.href='https://www.asus.com/support/product/contactus/services/questionform/';">Contact asus support</button>
+        </div>
+    </div>
+</body>
+</html>
+
